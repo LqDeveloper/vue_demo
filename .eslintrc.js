@@ -4,7 +4,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["standard-with-typescript", "plugin:vue/vue3-essential"],
+  extends: [
+    "standard-with-typescript",
+    "plugin:vue/vue3-essential",
+    "plugin:prettier/recommended",
+  ],
   overrides: [
     {
       env: {
@@ -25,14 +29,14 @@ module.exports = {
     project: "./tsconfig.app.json",
     extraFileExtensions: [".vue"],
   },
-  plugins: ["@typescript-eslint", "vue"],
+  plugins: ["@typescript-eslint", "vue",],
   rules: {
     //需要 let 或 const 而不是 var
     "no-var": "error",
     //禁止使用分号
-    semi: "error",
+    // semi: "error",
     //字符串使用单引号
-    quotes: ["error", "single"],
+    // quotes: ["error", "single"],
     //禁止混淆多行表达式
     "no-unexpected-multiline": "error",
     //不允许多个空行
@@ -44,5 +48,7 @@ module.exports = {
     //禁止使用未使用的变量。
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
+    //代码格式化
+    "prettier/prettier": "error",
   },
 };
